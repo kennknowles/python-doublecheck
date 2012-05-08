@@ -14,12 +14,12 @@ the CPU time to find the _smallest_ counterexample.
 This library is a brand new work-in-progress (see commit log for dates) with known
 issues:
 
- - Does not have randomly generated strings just yet
+ - Does not have randomly generated strings just yet.
  - No existential quantification yet, but smallcheck does allow it!
- - I've reversed the argument order from traditional ordering to use pythons *args and **kwargs... unsure if this is cool
- - Needs more thorough testing
- - Needs to be able to test that a property always throws an exception
- - Needs lots more combinators
+ - Needs more thorough testing.
+ - Needs to be able to test that a property always throws an exception.
+ - Needs lots more combinators.
+ - Needs one-liner interface rather than checking status of test cases.
 
 
 Installation & Usage
@@ -30,9 +30,8 @@ Installation & Usage
     $ pip install doublecheck
     $ python
     >>> from doublecheck import * 
-    >>> ForAll(lambda i: i > 0, PosInts()).quickcheck(100000)
-
-    >>> ForAll(Strings, lambda s: s != "bb").smallcheck(20)
+    >>> ForAll(lambda i: i > 0, PosInts()).quickcheck(100000).status
+    'Certain'
 
 
 Further Reading & Related Projects
