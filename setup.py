@@ -1,4 +1,5 @@
 import setuptools 
+import os.path
 import datetime
 
 setuptools.setup(   
@@ -10,7 +11,7 @@ setuptools.setup(
     license = 'Apache 2.0',
     packages = setuptools.find_packages(),
     description = "Pythonic library for QuickCheck-style randomized testing and SmallCheck-style exhaustive testing of the same test suite.",
-    long_description = open('README.md').read(),
+    long_description = open(os.path.join(os.path.dirname(__file__), 'README.md')).read(),
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Software Development :: Testing",
